@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Se você usar estes dados, por favor cite o artigo abaixo."
+title: "Prontidão de Segurança para IA nos 27 Tribunais de Justiça Estaduais"
+authors:
+  - family-names: "Santos"
+    given-names: "Valber Gregory Barbosa Costa Bezerra"
+  - family-names: "Oliveira"
+    given-names: "Gustavo Henrique Ferreira de Miranda"
+  - family-names: "Santos Júnior"
+    given-names: "Jário José dos"
+date-released: 2026-09-08
+license: CC-BY-4.0

@@ -1,0 +1,109 @@
+Dimensão Avaliada,Norma CNJ de Referência,LGPD Artigo(s),Norma Internacional Equivalente,TJSP (Cluster A),TJSC (Cluster A),TJMG (Cluster A),TJAL (Ref. Nordeste)
+"Governança de Dados Pessoais
+(Comitê/Política de Privacidade)","Res. CNJ 363/2021
+art. 1º, I e VI","Arts. 23 §1º,
+6º, X","ISO/IEC 27701:2019
+§5.2 (PIMS)","✓ Port. 9.908/2020
+CGPD instituído","✓ Res. GP 27/2024
+Comitê ativo","✓ Res. OE 1.075/2024
+Privacy by design","✓ Res. 03/2021
+Comitê Gestor"
+"Política de Segurança
+da Informação (PSI)","Res. CNJ 396/2021
+(ENSEC-PJ)","Art. 46
+§1º e §2º","ISO/IEC 27001:2022
+Domínios A.5–A.8
+NIST CSF 2.0","✓ 9 normas TJSP-PSI
+com TLS e RBAC","✓ Resolução GP
+n. 27/2024 + ETIR","✓ Res. OE 1.075/2024
+Privacy by default","✓ Res. 11/2022
+9 Anexos técnicos
+NIST CSF implícito"
+"DPO / Encarregado
+de Dados Pessoais","Res. CNJ 363/2021
+art. 1º, II","Art. 41
+caput","ISO/IEC 27701:2019
+§5.3.1","✓ Designado como
+Gabinete Digital","✓ Encarregada
+designada formalmente","✓ CEGINP + COTRAD
+designados","✗ DPO não designado
+como pessoa física"
+"RIPD para
+Tratamentos de Alto Risco","Res. CNJ 363/2021
+art. 1º, IX","Art. 38
+caput","ISO/IEC 27701:2019
+§7.2.5; GDPR Art. 35",✗ Não publicado,✗ Não publicado,✗ Não publicado,"✗ Ausente (biometria
+e dados sensíveis)"
+"Protocolo de Resposta
+a Incidentes (72h ANPD)","Port. CNJ 162/2021
+Port. 186/2024","Art. 48 + Res.
+ANPD 4/2023","NIST SP 800-61r2
+ISO/IEC 27035:2016","½ Protocolo existe;
+teste: antipadrão
+discricionariedade?","✓ Res. GP 27/2024
+ETIR + Núcleo Ciber.
+Sem antipadrão ident.","½ Protocolo em
+construção (2024)","½ Res. 22/2023
+PGCC/PPINC/PIILC
+⚠ Art. 5º §1º PIILC
+= antipadrão crítico"
+"Regulamentação de
+Uso de IA / LLMs","Res. CNJ 332/2020
+(ética IA judiciário)","Arts. 20, 46,
+37–39","NIST AI RMF 1.0
+OWASP LLM Top 10
+(2025)","✗ Sem norma
+específica de IA/LLM","✗ Sem norma
+específica de IA/LLM","✗ Sem norma
+específica de IA/LLM","✗ Sem norma
+específica de IA/LLM"
+"Modelagem de Ameaças
+(MITRE ATT&CK / STRIDE)",—,"Art. 46
+§2º","MITRE ATT&CK® v15
+STRIDE (Shostack 2014)
+NIST CSF 2.0 (Governar)","✗ Não adota
+formalmente","✗ Não adota
+formalmente","✗ Não adota
+formalmente","✗ Não adota formal-
+mente; PPINC compat.
+c/ NIST CSF implícito"
+"Transferência Internacional
+de Dados (Nuvem)","Res. CNJ 647/2025
+art. 1º, §2º, IX","Arts. 33–36
+Res. ANPD 19/2024","ISO/IEC 27701:2019
+§8.5; GDPR Cap. V
+Cláusulas-Padrão","½ Contratos de
+nuvem existem;
+CPC ANPD pendente","½ Contratos nuvem;
+due diligence
+parcial","½ Contratos nuvem;
+CPC ANPD pendente","½ Res. 22/2023
+art. 2º, VIII abrange
+Internet; CPC
+ANPD ausente"
+"Autenticação Multifator
+(MFA) em Sistemas Sensíveis","Port. CNJ 140/2024
+(MFA obrigatório)","Art. 46
+§1º","ISO/IEC 27001:2022
+A.8.5; NIST CSF
+Protect (PR.AA)","✓ Port. 9.908/2020
+MFA em VPN + acesso","✓ Resolução GP
+27/2024 + Port.
+140/2024 CNJ","✓ Res. OE 1.075/2024
+alinhada Port. CNJ","½ Res. 11/2022
+An. II §6.1.6: MFA
+em VPN; extensão
+a PJe pendente"
+"Treinamento em LGPD
+e Segurança para Servidores","Res. CNJ 363/2021
+art. 1º, III","Art. 50
+caput","ISO/IEC 27001:2022
+A.6.3","✓ Programa de
+Formação (437 part.)
+tipo STJ-compartilhado","✓ Res. TJ 50/2023
+Política Educação
+Seg. Cibernética","✓ EJEF realiza
+seminários e
+palestras","½ ESMAL responsável;
+conteúdo LGPD
+específico ausente"

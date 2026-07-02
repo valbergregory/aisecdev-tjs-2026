@@ -1,0 +1,26 @@
+OWASP LLM (2025),Nome em PT-BR,MITRE ATT&CK Tática,Cenário Judicial Concreto,Controle Mínimo (DevSecOps),Art. LGPD Violado,Prioridade no Judiciário
+"LLM01:2025
+Prompt Injection",Injeção de Prompt,"TA0001 Acesso Inicial
+TA0009 Coleta",Advogado manipula chatbot do PJe para revelar dados sigilosos de processo alheio ou alterar teor de minuta gerada por IA,Validação rigorosa de entradas; output filtering; sandbox de execução; revisão humana obrigatória de minutas geradas,"Arts. 46, 48",🔴 CRÍTICA
+"LLM02:2025
+Sensitive Info Disclosure",Divulgação de Informações Sensíveis,"TA0009 Coleta
+TA0010 Exfiltração","LLM treinado com documentos do PJe reproduz laudos médicos, dados de menores ou depoimentos em segredo de justiça em suas respostas",Classificação dos dados no prompt; anonimização antes do contexto; DLP na saída do modelo; RBAC sobre acesso ao LLM,"Arts. 11, 14, 46",🔴 CRÍTICA
+"LLM03:2025
+Supply Chain",Riscos na Cadeia de Fornecimento,TA0001 Acesso Inicial,Modelo base fornecido por terceiro contém backdoor ou foi envenenado na fase de fine-tuning com dados de outro tribunal,AI-BOM (inventário de componentes); versionamento e checksum do modelo; ISO 27001 do fornecedor; cláusulas LGPD no contrato (arts. 37–39),"Arts. 37–39, 46",🟠 ALTA
+"LLM04:2025
+Data & Model Poisoning",Envenenamento de Dados e Modelo,"TA0001 Acesso Inicial
+TA0040 Impacto",Inserção de dados adversariais na base de jurisprudência usada para RAG; modelo gera minutas com viés ou trechos incorretos sistematicamente,Validação e curadoria rigorosa do corpus RAG; monitoramento de drift; auditoria periódica de saídas; rastreabilidade de fontes,"Arts. 46, 49",🟠 ALTA
+"LLM05:2025
+Improper Output Handling",Tratamento Inadequado de Saídas,"TA0002 Execução
+TA0040 Impacto",Saída do LLM inserida diretamente no PJe sem sanitização executa SQL injection ou XSS no sistema judicial,Sanitização obrigatória de saídas; output schema estrito; proibição de execução direta de código gerado por IA no PJe,"Arts. 46, 48",🟠 ALTA
+"LLM06:2025
+Excessive Agency",Agência Excessiva,"TA0004 Escalação
+TA0040 Impacto","Agente de IA com acesso irrestrito ao PJe arquiva processos, gera despachos ou altera registros sem revisão humana",RBAC sobre ferramentas do agente; aprovação humana obrigatória para ações irreversíveis; least privilege; logging de cada ação do agente,Art. 20 (revisão humana obrigatória de decisões automatizadas),🔴 CRÍTICA
+"LLM07:2025
+System Prompt Leakage",Vazamento do Prompt de Sistema,TA0009 Coleta,"Extração do prompt de sistema do chatbot judicial revela regras internas, estrutura do banco de dados ou instruções de contorno de segurança",Prompt de sistema isolado e protegido; detecção de tentativas de extração; não expor metadados ou arquitetura do sistema nas respostas,"Arts. 46, 49",🟡 MÉDIA
+"LLM08:2025
+Vector & Embedding Weaknesses",Vulnerabilidades em Vetores e Embeddings,TA0009 Coleta,Manipulação de embeddings no banco vetorial do RAG judicial para forçar recuperação de documentos sigilosos ou em segredo de justiça,Controle de acesso granular ao banco vetorial; criptografia dos embeddings; auditoria de consultas; segregação por nível de sigilo,"Arts. 46, 48",🟡 MÉDIA
+"LLM09:2025
+Misinformation",Desinformação / Alucinação,TA0040 Impacto,LLM alucina jurisprudência inexistente em minuta automatizada; magistrado assina sem revisão; decisão inválida e dano ao jurisdicionado,Revisão humana obrigatória de todas as saídas jurídicas; citação com fonte verificável; grounding em RAG auditado; disclaimers obrigatórios,"Arts. 6º VI, 20",🔴 CRÍTICA
+"LLM10:2025
+Unbounded Consumption",Consumo Irrestrito de Recursos,TA0040 Impacto,Adversário inunda a API do chatbot judicial com consultas massivas; sistema fica indisponível em período de prazo processual fatal,Rate limiting por usuário/IP; timeout estrito; monitoramento de uso; PCA com RTO definido para sistemas de IA judiciais,Art. 46 (disponibilidade),🟡 MÉDIA
