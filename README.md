@@ -1,57 +1,64 @@
 # Prontidão de Segurança para IA nos Tribunais de Justiça Estaduais (AISecDev 2026)
 
-Dados de replicação (Disponibilidade de Artefatos) do artigo:
+Dados de replicação do artigo *Adoção de IA no Poder Judiciário Brasileiro sem Controles de Segurança: Um Estudo Comparativo dos 27 Tribunais de Justiça Estaduais* (AISecDev 2026, workshop co-localizado com o CBSoft 2026, IME-USP, São Paulo).
 
-> **Adoção de IA no Poder Judiciário Brasileiro sem Controles de Segurança: Um Estudo Comparativo dos 27 Tribunais de Justiça Estaduais**
-> V. G. B. C. B. Santos; G. H. F. de M. Oliveira; J. J. dos Santos Júnior.
-> Workshop on Secure Software Development in the Age of AI (AISecDev 2026), co-localizado com o CBSoft 2026, IME-USP, São Paulo, 8 set. 2026.
+O repositório reúne a coleta documental e as matrizes de análise que fundamentam as tabelas do artigo. O objetivo é comparar, tribunal a tribunal, a existência de controles públicos de governança de dados, segurança da informação, proteção de dados pessoais, resposta a incidentes e regulamentação de IA nos 27 Tribunais de Justiça estaduais.
 
-Este repositório contém a coleta documental e as matrizes de análise que fundamentam
-as tabelas do artigo. A metodologia é análise documental de fontes primárias públicas
-(portais oficiais dos tribunais e Diários de Justiça Eletrônicos), no período de
-**janeiro de 2021 a junho de 2026**.
+## Dados e fontes
 
-## Conteúdo
+- **Método:** análise documental de fontes primárias públicas.
+- **Fontes:** portais oficiais dos tribunais e Diários de Justiça Eletrônicos.
+- **Período de cobertura:** janeiro de 2021 a junho de 2026.
+- **Referências normativas usadas na classificação:** LGPD (Lei 13.709/2018), Resoluções do CNJ, normas ISO/NIST, OWASP LLM Top 10 (2025) e táticas MITRE ATT&CK.
 
-| Arquivo | Descrição |
-|---|---|
-| [`dados/matriz_27_tjs.csv`](dados/matriz_27_tjs.csv) | Matriz de prontidão dos 27 TJs em 6 dimensões, pontuação ponderada e nível de maturidade (**Tabela 3** do artigo). |
-| [`dados/owasp_llm_top10_judiciario.csv`](dados/owasp_llm_top10_judiciario.csv) | OWASP LLM Top 10 (2025) traduzido para o contexto judicial, com tática MITRE ATT&CK, cenário concreto, controle DevSecOps e artigo da LGPD violado. |
-| [`dados/diagnostico_tj_normas.csv`](dados/diagnostico_tj_normas.csv) | Diagnóstico de conformidade (LGPD × Resoluções CNJ × normas ISO/NIST) para os tribunais de referência. |
-| [`dados/anexo_analise_tj_seguranca_ia.xlsx`](dados/anexo_analise_tj_seguranca_ia.xlsx) | Planilha-fonte original com as três abas. |
+A análise registra **conformidade formal publicada**, não implementação técnica verificada em campo. A ausência de evidência pública é registrada como tal (`✗`).
 
-## Dimensões e pesos da matriz
+## Estrutura do repositório
+
+```
+dados/
+  matriz_27_tjs.csv                 matriz de prontidão dos 27 TJs (Tabela 3 do artigo)
+  owasp_llm_top10_judiciario.csv    OWASP LLM Top 10 (2025) lido no contexto judicial
+  diagnostico_tj_normas.csv         diagnóstico LGPD × Resoluções CNJ × ISO/NIST para tribunais de referência
+  anexo_analise_tj_seguranca_ia.xlsx planilha-fonte com as três abas acima
+CITATION.cff                        metadados de citação
+LICENSE / LICENSING.md              licença dos dados
+```
+
+Os três CSVs são exportações das abas da planilha `anexo_analise_tj_seguranca_ia.xlsx` (`Matriz 27 TJs`, `OWASP LLM Top10 × Judiciário`, `Diagnóstico TJ × Normas`).
+
+### `dados/matriz_27_tjs.csv`
+
+Uma linha por tribunal (27 linhas). Colunas: `TJ`, `UF`, seis dimensões, `Total Ponderado (%)` e `Nível de Maturidade`.
 
 | Dimensão | Peso | Evidência exigida |
 |---|---|---|
 | Governança de Dados | 15% | Comitê de Proteção de Dados ou Política de Privacidade pública |
-| PSI | 20% | Resolução de PSI com anexos técnicos |
+| PSI | 20% | Resolução de Política de Segurança da Informação com anexos técnicos |
 | DPO / Encarregado | 15% | Designação formal com canal público |
 | RIPD | 15% | Relatório de impacto para tratamentos de alto risco |
-| Resp. a Incidentes | 20% | Protocolo com prazo de 72h (art. 48 LGPD) |
+| Resp. a Incidentes | 20% | Protocolo com prazo de 72h (art. 48 da LGPD) |
 | Regulamentação de IA | 15% | Norma ou diretriz interna sobre uso de IA |
 
-**Legenda:** `✓` = evidência pública encontrada · `½` = parcial/antipadrão · `✗` = não localizada.
-**Níveis:** Inicial 0–33% · Básico 34–50% · Intermediário 51–75% · Avançado ≥76%.
+Legenda das células: `✓` evidência pública encontrada · `½` parcial/antipadrão · `✗` não localizada.
+Níveis de maturidade: Inicial 0–33% · Básico 34–50% · Intermediário 51–75% · Avançado ≥ 76%.
 
-## Principais resultados
+### `dados/owasp_llm_top10_judiciario.csv`
 
-- Nenhum dos 27 tribunais atinge o nível **Avançado**.
-- **15** tribunais publicaram PSI; **8** designaram DPO; **0** possuem norma específica de IA.
-- Distribuição: 0 Avançado · 8 Intermediário · 7 Básico · 12 Inicial.
-- O antipadrão da *cláusula de discricionariedade ilegal* na comunicação de incidentes
-  foi identificado em **8** tribunais (~30%).
+Uma linha por item do OWASP LLM Top 10 (2025). Colunas: código OWASP, nome em pt-BR, tática MITRE ATT&CK, cenário judicial, controle mínimo (DevSecOps), artigo(s) da LGPD e prioridade no Judiciário.
 
-## Limitação
+### `dados/diagnostico_tj_normas.csv`
 
-A análise avalia **conformidade formal publicada**, não implementação técnica verificada
-em campo. A ausência de evidência pública é registrada como tal e tratada como indicador
-de baixa maturidade documental.
+Uma linha por dimensão avaliada (10 linhas). Colunas: dimensão, norma CNJ de referência, artigo(s) da LGPD, norma internacional equivalente e situação em TJSP, TJSC, TJMG e TJAL.
 
-## Como citar
+## Como reproduzir
 
-Ver `CITATION.cff` (atualizar com DOI/anais após publicação).
+Não há código. As tabelas do artigo são obtidas diretamente dos CSVs em `dados/`.
 
-## Licença
+## Licença e citação
 
-Dados sob [CC BY 4.0](LICENSE). Reuso permitido com atribuição.
+Dados sob [CC BY 4.0](LICENSE); ver também [LICENSING.md](LICENSING.md).
+
+Para citar, use os metadados de [`CITATION.cff`](CITATION.cff):
+
+> Santos, V. G. B. C. B.; Oliveira, G. H. F. de M.; Santos Júnior, J. J. dos. *Prontidão de Segurança para IA nos 27 Tribunais de Justiça Estaduais* (dados de replicação). 2026. CC BY 4.0.
